@@ -19,7 +19,7 @@ interface initialState {
 
 const initialState: initialState = {
   data: [],
-  meta: { total: 0, skip: 0, limit: 0 },
+  meta: { total: 0, skip: 0, limit: 15 },
   isloading: false,
   isError: false,
   error: null,

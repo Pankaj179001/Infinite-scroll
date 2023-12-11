@@ -28,10 +28,12 @@ const Home = () => {
   const IsLoading = PostLoading || ProdLoading;
   const [Id, setId] = useState(null);
   useMemo(() => {
-    if (category === types[0]) {
-      dispatch(FetchProducts({ skip: 0, limit: 15 * Page }));
-    } else {
-      dispatch(FetchPosts({ skip: 0, limit: 15 * Page }));
+    if (meta?.limit !== meta?.total) {
+      if (category === types[0]) {
+        dispatch(FetchProducts({ skip: 0, limit: 15 * Page }));
+      } else if(category === types[1]) {
+        dispatch(FetchPosts({ skip: 0, limit: 15 * Page }));
+      }
     }
   }, [Page, category]);
 
